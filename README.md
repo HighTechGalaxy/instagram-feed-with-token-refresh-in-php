@@ -31,14 +31,14 @@ This script assumes that you will take care of the following:
     - Get a fresh [UUID here](https://www.uuidgenerator.net/version4) and swap yours in. This is a little safeguard to help prevent people from triggering the token generation routine.
     - Change the client_id to the one Instagram provided in the [Get Started](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started) tutorial.
     - Change the client_secret to that provided by the Instagram tutorial.
-    - Set the redirect_uri to the location of this script on your server. For example, you might load the script to webroot and thereby have https://yoursite.com/instagram.php as your redirect URI.
+    - Set the redirect_uri to the location of this script on your server. For example, you might load the script to webroot and thereby have https://example.com/instagram.php as your redirect URI.
     - Set the cache directory ($cacheDir) to a read/write directory on your web server that is above web root.
-3. Start the access token process by loading your script in a web browser. If you loaded the script into webroot and your UUID was aee3316b-0c31-4b44-a957-60163b6ec08f then you would load this URL in a browser: https://yoursite.com/instagram.php?refresh=aee3316b-0c31-4b44-a957-60163b6ec08f
+3. Start the access token process by loading your script in a web browser. If you loaded the script into webroot and your UUID was aee3316b-0c31-4b44-a957-60163b6ec08f then you would load this URL in a browser: https://example.com/instagram.php?refresh=aee3316b-0c31-4b44-a957-60163b6ec08f
 4. You will be redirected to Instagram to login and allow the appropriate app to access your Instagram feed. Any questions, refer to the [Instagram tutorial](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started).
 
 ## Javascript Time!
 Unless something goes pear shaped with the above steps, the script has now saved a long-lived token to your local file storage. It has also grabbed the most recent 25 Instagram posts from your feed and saved that as JSON to your file system.
 
-You can now write some Javascript to fetch the Instagram JSON and iterate through it. You'll make an AJAX call to https://yoursite.com/instagram.php. You'll get cached results and loop through them to add images to your website. Take a look at the structure of the JSON. You'll loop through the `data` object in the feed. Each time the script runs, it will check for cache freshness. If the feed is more than a day old, the access token and feed will be refreshed.
+You can now write some Javascript to fetch the Instagram JSON and iterate through it. You'll make an AJAX call to https://example.com/instagram.php. You'll get cached results and loop through them to add images to your website. Take a look at the structure of the JSON. You'll loop through the `data` object in the feed. Each time the script runs, it will check for cache freshness. If the feed is more than a day old, the access token and feed will be refreshed.
 
 Happy Coding!
